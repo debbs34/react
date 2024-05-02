@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Animation</title>
+    <style>
+      /* Your CSS styles for loading animation */
+      #loadingScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+        <meta content="noindex,noarchive,nofollow,nosnippet" name="robots" />
+        <meta
+          content="noindex,noarchive,nofollow,nosnippet,noimageindex"
+          name="googlebot"
+        />
+        <meta
+          content="noindex,noarchive,nofollow,nosnippet,noodp,noydir"
+          name="slurp"
+        />
+        <meta content="noindex,noarchive,nofollow,nosnippet" name="msnbot" />
+        <meta content="noindex,noarchive,nofollow,nosnippet" name="teoma" />
+        <meta content="IE=IE9" http-equiv="X-UA-Compatible" />
+        <meta content="true" name="HandheldFriendly" />
+        <meta
+          content="width=device-width initial-scale=1 user-scalable=no maximum-scale=1"
+          name="viewport"
+        />
+        <link
+          href="data:image/x-icon;base64,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////////5Ktg/9R4AP/UeAD/1HgA/1EqA/+lWgP/uGQD/7hkA/+4ZAP/uGQD/7hkA/+4ZAP/1HgA/8ZuAf+nVwT/rl8J/9OEEf/fkBT/35AU/9+QFP/UeAD/1HgA/9R4AP/03b///////+/Mn//UeAD/1HgA/9R4AP/UeAD/78yf///////03b//1HgA/9R4AP/UeAD/USoD/6VaA/+4ZAP/uGQD/7hkA/+4ZAP/uGQD/7hkA//UeAD/1HgA/9R4AP+/aQL/oFIF/7ZnC//YiRP/35AU/9R4AP/UeAD/1HgA//fmz///////6ryA/9R4AP/UeAD/1HgA/9R4AP/qvID///////fmz//UeAD/1HgA/9R4AP9qOgL/vmwA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/+qoKP/qqCj/6qgo/+qoKP/mpCf/yYgh/28uC/+yaRD/1HgA/9R4AP/UeAD/9+bP///////qvID/1HgA/9R4AP/UeAD/1HgA/+q8gP//////9+bP/9R4AP/UeAD/1HgA/2o6Av++bAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/6qgo/+qoKP/qqCj/6qgo/+qoKP/qqCj/ZycK/2cnCs/UeAD/1HgA/9R4AP/03b////////LVr//UeAD/1HgA/9R4AP/UeAD/78yf///////03b//1HgA/9R4AP/UeAD/ajoC/75sAP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/qqCj/6qgo/+qoKP/qqCj/6qgo/+qoKP9nJwpwAAAAANR4AP/UeAD/1HgA/+SrYP///////////+SrYP/UeAD/1HgA/9+aQP///////////+ezcP/UeAD/1HgA/9R4AP9qOgL/vmwA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/+qoKP/qqCj/6qgo/+qoKP/qqCj/6qgo/wAAAAAAAAAA1HgA/9R4AP/UeAD/1HgA//fmz/////////////fmz//35s/////////////35s//14AQ/9R4AP/UeAD/1HgA/2o6Av++bAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/6qgo/+qoKP/qqCj/6qgo/+qoKP/qqCj/AAAAAAAAAADUeAD/1HgA/9R4AP/UeAD/14AQ/+/Mn///////////////////////78yf/9eAEP/UeAD/1HgA/9R4AP/UeAD/ajoC/75sAP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/qqCj/6qgo/+qoKP/qqCj/6qgo/+qoKP8AAAAAAAAAANR4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/fmkD/35pA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP96RQD/0pck/+qoKP/qqCj/6qgo/+qoKP/qqCj/6qgo///ZUP//2VD//9lQ///ZUP//2VD//9lQ/wAAAAAAAAAA1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/3pFAP/SlyT/6qgo/+qoKP/qqCj/6qgo/+qoKP/qqCj//9lQ///ZUP//2VD//9lQ///ZUP//2VD/AAAAAAAAAADUeADP1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/DbgD/h0wA/9KXJP/qqCj/6qgo/+qoKP/qqCj/6qgo/+qoKP//2VD//9lQ///ZUP//2VD//9lQ///ZUP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+bAD/vmwA/75sAP++bAD/vmwA/75sAP++bAD/15ol/+qoKP/qqCj/6qgo/+qoKP/qqCj/6qgo///ZUP//2VD//9lQ///ZUP//2VD//9lQ/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANR4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/9R4AP/qqCj/6qgo/+qoKP/qqCj/6qgo/+qoKP/qqCj//9lQ///ZUP//2VD//9lQ///ZUP//2VD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1HgA/9R4AP/UeAD/1HgA/9R4AP/UeAD/1HgA/+qoKP/qqCj/6qgo/+qoKP/qqCj/6qgo/+qoKP//2VD//9lQ///ZUP//2VD//9lQ///ZUP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACbUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJtQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAm1AGz5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBv+bUAb/m1AG/5tQBs8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADAAAAAwAAAAMAAAADAAAAAwAAAAP/wAAD/8AAA//AAAP/wAAD/8AAA//AAAP//////////ygAAAAYAAAAMAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOqoKO/qqCj/6qgo/+qoKP/qqCj/6qgo/+qo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"
+          rel="shortcut icon"
+          type="image/x-icon"
+        />
+        <style>
+          #loadingScreen {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+          }
+          #loadingLogo {
+            position: fixed;
+            top: calc(50vh - 90px);
+            left: calc(50vw - 90px);
+            width: 180px;
+            height: 180px;
+          }
+          #MSLogo {
+            position: fixed;
+            bottom: 36px;
+            left: calc(50vw - 45px);
+          }
+          .dark #loadingScreen {
+            background-color: #333;
+          }
+          .darkNew #loadingScreen {
+            background-color: #1f1f1f;
+          }
+        </style>
+        <title>Outlook Loading... Wait...</title>
+      </head>
+      <body>
+        <div id="loadingScreen">
+          <div id="loadingLogo">
+            <style>
+              :root {
+                --s: 180px;
+                --envW: 130px;
+                --envH: 71px;
+                --calW: 118px;
+                --sqW: calc(var(--calW) / 3);
+                --sqH: 37px;
+                --calHH: 20px;
+                --calH: calc(var(--sqH) * 3 + var(--calHH));
+                --calY: calc(var(--calH) + 20px);
+                --calYExt: calc(var(--calH) - 80px);
+                --calYOverExt: calc(var(--calH) - 92px);
+                --flapS: 96px;
+                --flapH: calc(0.55 * var(--envH));
+                --flapScaleY: calc(var(--flapH) / var(--flapWidth));
+                --dur: 5s;
+              }
+
+              #container {
+                width: var(--s);
+                height: var(--s);
+                animation: bounce var(--dur) infinite;
+              }
+
+              @keyframes bounce {
+                0% {
+                  transform: translateY(0);
+                }
+                12.5% {
+                  transform: translateY(0);
+                }
+                22.5% {
+                  transform: translateY(7px);
+                }
+                32.5% {
+                  transform: translateY(0);
+                }
+                50% {
+                  transform: translateY(0);
+                }
+                76.1% {
+                  transform: translateY(0);
+                }
+                86% {
+                  transform: translateY(7px);
+                }
+                100% {
+                  transform: translateY(0);
+                }
+              }
+
+              #logo {
+                height: 179px;
+                width: 130px;
+                overflow: hidden;
+                margin-top: -59px;
+                margin-left: 25px;
+              }
+
+              #containerShadow {
+                position: relative;
+                top: 120px;
+                left: 25px;
+                width: var(--envW);
+                height: var(--envH);
+                border-radius: 0 0 7px 7px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0 4px 5px;
+                animation: shadow-fade var(--dur) infinite;
+              }
+
+              @keyframes shadow-fade {
+                0% {
+                  opacity: 0;
+                }
+                21.2% {
+                  opacity: 0;
+                }
+                47% {
+                  opacity: 1;
+                }
+                70% {
+                  opacity: 1;
+                }
+                80% {
+                  opacity: 0;
+                }
+                100% {
+                  opacity: 0;
+                }
+              }
+
+              #flapContainer {
+                width: var(--envW);
+                margin-top: 179px;
+              }
+
+              #ef {
+                width: var(--envW);
+                height: var(--envH);
+                border-radius: 0 0 7px 7px;
+                overflow: hidden;
+                margin-top: -41px;
+              }
+
+              #ef > .l {
+                width: 287px;
+                height: var(--envH);
+                background: #28a8ea;
+                transform: translate(-153px, -70px) rotate(28deg);
+              }
+
+              #ef > .r {
+                width: 287px;
+                height: var(--envH);
+                background: #1490df;
+                transform: translate(-120px, 63px) rotate(-28deg);
+              }
+
+              #eb {
+                width: var(--envW);
+                height: 40px;
+                background: #123b6d;
+                margin-top: -70px;
+              }
+
+              #cal {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: var(--calW);
+                height: var(--calH);
+                border-radius: 7px;
+                overflow: hidden;
+                margin: 0 auto;
+                margin-top: -306px;
+                animation: cal-bounce var(--dur) infinite;
+                animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+                transform: translateY(var(--calYExt)) scaleY(1);
+              }
+
+              @keyframes cal-bounce {
+                0% {
+                  transform: translateY(var(--calY)) scaleY(1);
+                }
+                16.5% {
+                  transform: translateY(var(--calY)) scaleY(1);
+                }
+                28% {
+                  transform: translateY(var(--calYOverExt)) scaleY(1);
+                }
+                31% {
+                  transform: translateY(var(--calYExt)) scaleY(1.05);
+                }
+                33% {
+                  transform: translateY(var(--calYExt)) scaleY(0.96);
+                }
+                34% {
+                  transform: translateY(var(--calYExt)) scaleY(1);
+                }
+                68.5% {
+                  transform: translateY(var(--calYExt)) scaleY(1);
+                  animation-timing-function: cubic-bezier(
+                    0.66,
+                    -0.16,
+                    1,
+                    -0.29
+                  );
+                }
+                76.1% {
+                  transform: translateY(var(--calY)) scaleY(1);
+                }
+                100% {
+                  transform: translateY(var(--calY)) scaleY(1);
+                }
+              }
+
+              #cal > .t {
+                width: var(--calW);
+                height: calc(var(--calHH) + 1px);
+                margin-bottom: -1px;
+                background: #0358a7;
+              }
+
+              #cal > .r {
+                display: flex;
+                flex-direction: row;
+                width: var(--calW);
+                height: var(--sqH);
+              }
+
+              .s {
+                width: var(--sqW);
+                height: calc(var(--sqH) + 1px);
+              }
+
+              .s1 {
+                background: #0078d4;
+              }
+
+              .s2 {
+                background: #28a8ea;
+              }
+
+              .s3 {
+                background: #50d9ff;
+              }
+
+              .s4 {
+                background: #0364b8;
+              }
+
+              .s5 {
+                background: #14447d;
+              }
+
+              #openedFlap {
+                width: var(--envW);
+                height: 107px;
+                animation: opened-flap-swing var(--dur) infinite;
+                animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+                transform-origin: top;
+                transform: translateY(-68px) rotate3d(1, 0, 0, -180deg);
+              }
+
+              @keyframes opened-flap-swing {
+                0% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -90deg);
+                }
+                14.5% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -90deg);
+                }
+                16.5% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -180deg);
+                }
+                50% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -180deg);
+                }
+                74% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -180deg);
+                }
+                76% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -90deg);
+                }
+                100% {
+                  transform: translateY(-68px) rotate3d(1, 0, 0, -90deg);
+                }
+              }
+
+              #closedFlap {
+                width: var(--envW);
+                animation: closed-flap-swing var(--dur) infinite;
+                animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+                transform-origin: top;
+                transform: translateY(calc(-1 * var(--envH)))
+                  rotate3d(1, 0, 0, 90deg);
+              }
+
+              @keyframes closed-flap-swing {
+                0% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 0);
+                }
+                8.5% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 0);
+                }
+                14.5% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 90deg);
+                }
+                50% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 90deg);
+                }
+                76% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 90deg);
+                }
+                77% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 0);
+                }
+                100% {
+                  transform: translateY(calc(-1 * var(--envH)))
+                    rotate3d(1, 0, 0, 0);
+                }
+              }
+
+              #fmask {
+                width: var(--envW);
+                height: 107px;
+                overflow: hidden;
+              }
+
+              .flapTriangle {
+                width: var(--flapS);
+                height: var(--flapS);
+                background: #50d9ff;
+                margin: -48px auto 0 auto;
+                border-radius: 7px;
+                transform: scaleY(0.6) rotate(45deg);
+              }
+
+              #openedFlap .flapTriangle {
+                background: #123b6d;
+              }
+
+              #closedFlap .flapTriangle {
+                background: #50d9ff;
+              }
+            </style>
+            <div id="container">
+              <div id="containerShadow"></div>
+              <div id="logo">
+                <div id="flapContainer">
+                  <div id="openedFlap">
+                    <div id="fmask">
+                      <div class="flapTriangle"></div>
+                    </div>
+                  </div>
+
+                  <div id="cal">
+                    <div class="t"></div>
+                    <div class="r">
+                      <div class="s s1"></div>
+                      <div class="s s2"></div>
+                      <div class="s s3"></div>
+                    </div>
+                    <div class="r">
+                      <div class="s s4"></div>
+                      <div class="s s1"></div>
+                      <div class="s s2"></div>
+                    </div>
+                    <div class="r">
+                      <div class="s s5"></div>
+                      <div class="s s4"></div>
+                      <div class="s s1"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="eb"></div>
+                <div id="ef">
+                  <div class="r"></div>
+                  <div class="l"></div>
+                </div>
+                <div id="closedFlap">
+                  <div id="fmask">
+                    <div class="flapTriangle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg
+            height="22"
+            id="MSLogo"
+            width="99"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <path
+                d="M34.643 12.075l-.588 1.647h-.034c-.105-.387-.28-.934-.556-1.63l-3.15-7.897h-3.077V16.75h2.03V9.032c0-.476-.01-1.052-.03-1.711-.01-.333-.049-.6-.058-.804h.045c.103.473.21.834.287 1.075l3.776 9.16h1.42l3.748-9.243c.085-.211.175-.622.257-.992h.044c-.048.915-.09 1.75-.095 2.256v7.978h2.165V4.195h-2.956l-3.228 7.88z"
+                fill="#737474"
+              ></path>
+              <path d="M0 20.956h98.148V0H0z"></path>
+              <path
+                d="M42.866 16.751h2.118V7.752h-2.118zM43.947 3.929c-.349 0-.653.119-.902.353a1.166 1.166 0 00-.378.883c0 .344.126.636.374.865.247.23.552.345.906.345s.66-.115.91-.345c.25-.23.379-.52.379-.865 0-.339-.125-.632-.37-.873a1.262 1.262 0 00-.919-.363M52.477 7.663a5.892 5.892 0 00-1.182-.127c-.971 0-1.838.209-2.574.62-.739.41-1.31.998-1.699 1.745-.386.745-.583 1.615-.583 2.585 0 .85.19 1.631.567 2.318.377.69.91 1.23 1.585 1.602.673.373 1.452.563 2.313.563 1.006 0 1.866-.201 2.554-.597l.027-.017v-1.94l-.089.066c-.312.227-.66.408-1.035.538a3.121 3.121 0 01-1.014.197c-.83 0-1.497-.26-1.982-.772-.485-.513-.73-1.233-.73-2.14 0-.912.255-1.651.761-2.196.504-.544 1.173-.82 1.986-.82.695 0 1.374.236 2.014.702l.09.063V8.011l-.029-.017c-.241-.135-.571-.246-.98-.331M59.452 7.597a2.17 2.17 0 00-1.415.507c-.358.296-.616.7-.814 1.207H57.2V7.753h-2.116v8.999H57.2v-4.603c0-.784.178-1.426.528-1.912.346-.48.806-.723 1.369-.723.19 0 .404.031.636.093.23.063.396.129.493.2l.09.064V7.737l-.034-.014c-.197-.083-.477-.126-.83-.126M66.885 14.465c-.397.499-.996.751-1.779.751-.777 0-1.39-.256-1.823-.766-.435-.51-.655-1.238-.655-2.163 0-.954.22-1.701.655-2.22.433-.516 1.04-.778 1.806-.778.743 0 1.335.25 1.758.744.426.496.642 1.237.642 2.202 0 .977-.203 1.728-.604 2.23m-1.683-6.929c-1.484 0-2.663.435-3.503 1.293-.84.857-1.265 2.044-1.265 3.527 0 1.41.415 2.543 1.235 3.368.82.826 1.936 1.245 3.316 1.245 1.438 0 2.593-.441 3.434-1.31.84-.87 1.265-2.045 1.265-3.493 0-1.433-.4-2.573-1.187-3.394-.789-.82-1.897-1.236-3.295-1.236M74.378 11.471c-.667-.268-1.095-.49-1.27-.66-.17-.165-.257-.398-.257-.693 0-.262.108-.472.327-.642.219-.17.526-.257.911-.257.357 0 .723.056 1.085.166.363.111.682.26.949.44l.088.06V7.928l-.035-.015a4.715 4.715 0 00-.962-.268 5.932 5.932 0 00-1.056-.109c-1.01 0-1.845.258-2.483.767-.64.512-.967 1.184-.967 1.997 0 .422.07.798.209 1.116.14.32.355.6.641.837.283.233.722.478 1.302.728.488.2.852.37 1.083.505.227.13.387.263.477.39.088.127.133.299.133.512 0 .604-.452.897-1.384.897a3.8 3.8 0 01-1.172-.213 4.418 4.418 0 01-1.2-.609l-.089-.064v2.064l.033.015c.304.14.686.257 1.137.35.449.094.859.141 1.213.141 1.096 0 1.977-.26 2.62-.771.648-.515.976-1.204.976-2.045 0-.607-.176-1.127-.525-1.546-.345-.416-.946-.799-1.784-1.136M84.063 14.465c-.398.499-.997.751-1.78.751-.777 0-1.39-.256-1.822-.766-.435-.51-.655-1.238-.655-2.163 0-.954.22-1.701.655-2.22.432-.516 1.04-.778 1.806-.778.743 0 1.335.25 1.758.744.426.496.642 1.237.642 2.202 0 .977-.204 1.728-.604 2.23M82.38 7.536c-1.484 0-2.663.435-3.503 1.293-.84.857-1.266 2.044-1.266 3.527 0 1.41.415 2.543 1.235 3.368.82.826 1.936 1.245 3.317 1.245 1.438 0 2.593-.441 3.433-1.31.84-.87 1.266-2.045 1.266-3.493 0-1.433-.4-2.573-1.187-3.394-.789-.82-1.897-1.236-3.295-1.236M98.149 9.48V7.752h-2.144V5.069l-.072.022-2.015.616-.038.012v2.034h-3.177V6.62c0-.527.118-.931.351-1.2.23-.266.56-.402.982-.402.303 0 .616.072.931.213l.079.035V3.447l-.037-.013c-.294-.105-.695-.159-1.19-.159-.626 0-1.194.136-1.689.406-.495.27-.886.655-1.16 1.146-.272.489-.41 1.054-.41 1.68v1.246h-1.492v1.726h1.493v7.273h2.142V9.479h3.177v4.622c0 1.903.897 2.868 2.668 2.868.291 0 .597-.034.91-.101.319-.07.535-.137.662-.21l.029-.016v-1.743l-.087.058c-.117.078-.262.14-.432.188-.17.048-.312.072-.422.072-.416 0-.723-.112-.914-.332-.191-.223-.289-.612-.289-1.158V9.48h2.144z"
+                fill="#737474"
+              ></path>
+              <path d="M0 9.958h9.958V.001H0z" fill="#F05124"></path>
+              <path d="M10.995 9.958h9.957V.001h-9.957z" fill="#7EBB42"></path>
+              <path d="M0 20.956h9.958V11H0z" fill="#32A0DA"></path>
+              <path d="M10.995 20.956h9.957V11h-9.957z" fill="#FDB813"></path>
+            </g>
+          </svg>
+        </div>
+      </body>
+    </html>
+
